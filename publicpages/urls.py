@@ -4,5 +4,5 @@ from publicpages import views
 
 
 urlpatterns = [
-    path('', views.home_view, name='home'),
+    path('', views.home_view, name='home'), # Home page
 ]
