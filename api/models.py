@@ -27,6 +27,9 @@ class ScanResult(BaseModel):
     )
     status = models.CharField(max_length=3, choices=SCAN_STATUS_CHOICES, default=PENDING)
 
+    has_error = models.BooleanField(default=False)
+    error_message = models.TextField(null=True, blank=True)
+
     class Meta:
         ordering = ['target']
 
