@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # User-created apps
+    # Project apps
     'api.apps.ApiConfig',
     'publicpages.apps.PublicpagesConfig',
 ]
