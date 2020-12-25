@@ -1,5 +1,6 @@
 from uuid import uuid4
 
+from django.contrib.postgres.fields import JSONField
 from django.db import models
 
 
@@ -15,7 +16,7 @@ class BaseModel(models.Model):
 
 class ScanResult(BaseModel):
     target = models.CharField(max_length=255)
-    result = models.TextField(null=True, blank=True)
+    result = JSONField(null=True, blank=True)
 
     SUCCESS = 'SCS'
     PENDING = 'PEN'
