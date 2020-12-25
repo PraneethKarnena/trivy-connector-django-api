@@ -141,3 +141,9 @@ RABBITMQ_USER = env('RABBITMQ_USER', cast=str)
 RABBITMQ_PASSWORD = env('RABBITMQ_PASSWORD', cast=str)
 RABBITMQ_HOST = env('RABBITMQ_HOST', cast=str)
 CELERY_BROKER_URL = f'pyamqp://{RABBITMQ_USER}:{RABBITMQ_PASSWORD}@{RABBITMQ_HOST}'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+    ]
+}
