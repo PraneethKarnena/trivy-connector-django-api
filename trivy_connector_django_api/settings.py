@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     # User-created apps
     'api.apps.ApiConfig',
+    'publicpages.apps.PublicpagesConfig',
 ]
 
 MIDDLEWARE = [
