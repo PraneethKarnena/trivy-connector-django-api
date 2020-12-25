@@ -11,3 +11,24 @@ class BaseModel(models.Model):
     class Meta:
         abstract = True
         ordering = ['-created_at']
+
+
+class ScanResult(BaseModel):
+    target = models.CharField(max_length=255)
+    result = models.TextField(null=True, blank=True)
+
+    SUCCESS = 'SCS'
+    PENDING = 'PEN'
+    FAILED = 'FLD'
+    SCAN_STATUS_CHOICES = (
+        (PENDING, 'Pending'),
+        (SUCCESS, 'Success'),
+        (FAILED, 'Failed'),
+    )
+    status = models.CharField(max_length=3, choices=SCAN_STATUS_CHOICES, default=PENDING)
+
+    class Meta:
+        ordering = ['target']
+
+    def __str__(self):
+        return f'{self.id} - {self.target}'
