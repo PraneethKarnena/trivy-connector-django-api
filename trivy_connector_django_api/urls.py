@@ -16,6 +16,5 @@ Including another URLconf
 from django.urls import path, include
 
 urlpatterns = [
-    path('', include(('publicpages.urls', 'publicpages'), namespace='publicpages')),
     path('api/', include(('api.urls', 'api'), namespace='api')),
 ]

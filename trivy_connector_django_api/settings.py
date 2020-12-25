@@ -49,7 +49,6 @@ INSTALLED_APPS = [
 
     # Project apps
     'api.apps.ApiConfig',
-    'publicpages.apps.PublicpagesConfig',
 ]
 
 MIDDLEWARE = [
