@@ -88,8 +88,12 @@ WSGI_APPLICATION = 'trivy_connector_django_api.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('DB_NAME', cast=str),
+        'USER': env('DB_USER', cast=str),
+        'PASSWORD': env('DB_PASSWORD', cast=str),
+        'HOST': env('DB_HOST', cast=str),
+        'PORT': env('DB_PORT', cast=str),
     }
 }
 
