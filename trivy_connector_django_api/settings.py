@@ -135,3 +135,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Celery settings
+RABBITMQ_USER = env('RABBITMQ_USER', cast=str)
+RABBITMQ_PASSWORD = env('RABBITMQ_PASSWORD', cast=str)
+RABBITMQ_HOST = env('RABBITMQ_HOST', cast=str)
+CELERY_BROKER_URL = f'pyamqp://{RABBITMQ_USER}:{RABBITMQ_PASSWORD}@{RABBITMQ_HOST}'
